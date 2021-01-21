@@ -4,45 +4,77 @@
     android:layout_width="match_parent"
     android:layout_height="?actionBarSize"
     android:background="@color/deep_pink">
-    <TextView
-        android:id="@+id/search_select"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="search"
-        android:textColor="@android:color/white"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="5dp"
-        android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/search_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="search"
+            android:textColor="@android:color/white"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            android:layout_centerVertical="true"/>
 
 
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Products"
+            android:textSize="18dp"
+            android:id="@+id/prod_txt"
+            android:textColor="@android:color/white"
+            android:layout_toRightOf="@id/search_select"
+            android:layout_marginLeft="12dp"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"/>
 <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Products"
-    android:textSize="18dp"
-    android:id="@+id/prod_txt"
+    android:textSize="16dp"
     android:textColor="@android:color/white"
-    android:layout_centerInParent="true"
-    android:textStyle="bold"/>
+    android:textStyle="bold"
+    android:text="barchart"
+    android:id="@+id/selectbarchart"
+    android:layout_toRightOf="@id/prod_txt"
+    android:layout_centerVertical="true"
+    android:layout_marginLeft="10dp"
+    />
 
-   <LinearLayout
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_alignParentRight="true"
-       android:layout_marginRight="15dp"
-       android:layout_centerVertical="true">
-       <TextView
-           android:id="@+id/create_task"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="Task List"
-           android:textSize="18dp"
-           android:textColor="@android:color/white"
-           android:textStyle="bold"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:text="piechart"
+        android:id="@+id/selectpiechart"
+        android:layout_toRightOf="@id/selectbarchart"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        />
 
-           />
-   </LinearLayout>
-</RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true">
+            <TextView
+                android:id="@+id/create_task"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Task List"
+                android:textSize="18dp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+
+                />
+        </LinearLayout>
+
+
+   </RelativeLayout>

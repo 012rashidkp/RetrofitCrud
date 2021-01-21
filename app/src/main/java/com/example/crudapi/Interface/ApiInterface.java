@@ -39,4 +39,7 @@ public interface ApiInterface {
 @GET("products-list/")
     Call<Result>getproducts();
 
+@GET("growth-list/")
+    Call<Result>getChart();
+
 }

@@ -18,7 +18,7 @@ import com.example.crudapi.Fragments.SearchFragment;
 import com.example.crudapi.Interface.ApiInterface;
 
 public class MainActivity extends AppCompatActivity {
-private TextView CreateTask,searchbtn,product_btn;
+private TextView CreateTask,searchbtn,product_btn,SelectBarChart,SelectPieChart;
 private ApiInterface apiInterface;
 private TinyDB tinyDB;
     @Override
@@ -28,6 +28,8 @@ private TinyDB tinyDB;
         CreateTask=(TextView)findViewById(R.id.create_task);
         searchbtn=(TextView)findViewById(R.id.search_select);
         product_btn=(TextView)findViewById(R.id.prod_txt);
+        SelectBarChart=(TextView)findViewById(R.id.selectbarchart);
+        SelectPieChart=(TextView)findViewById(R.id.selectpiechart);
         tinyDB=new TinyDB(this);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.white, this.getTheme()));
@@ -41,6 +43,26 @@ private TinyDB tinyDB;
                 startActivity(intent);
             }
         });
+SelectBarChart.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        Intent intent=new Intent(MainActivity.this,ChartActivity.class);
+        intent.putExtra("method","barchart");
+        startActivity(intent);
+
+    }
+});
+
+SelectPieChart.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        Intent intent=new Intent(MainActivity.this,ChartActivity.class);
+        intent.putExtra("method","piechart");
+        startActivity(intent);
+
+    }
+});
+
 
 
 

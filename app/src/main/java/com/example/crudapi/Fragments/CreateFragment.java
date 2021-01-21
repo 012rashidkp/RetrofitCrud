@@ -128,6 +128,8 @@ public class CreateFragment extends Fragment {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 Loadingbar.dismiss();
+edit_Title.setText("");
+edit_Body.setText("");
             }
         });
 AlertDialog alertDialog=builder.create();

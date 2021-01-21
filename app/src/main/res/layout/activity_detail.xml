@@ -49,6 +49,13 @@
         android:text="do not"
         android:textColor="@android:color/black"
         android:textStyle="bold"/>
+    <ImageView
+        android:id="@+id/complete_image"
+        android:layout_width="35dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="5dp"
+        android:src="@drawable/ic_baseline_done_24"
+        android:visibility="gone"/>
 </LinearLayout>
 
 

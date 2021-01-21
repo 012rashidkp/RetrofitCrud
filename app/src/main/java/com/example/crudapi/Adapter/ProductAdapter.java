@@ -51,7 +51,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
          }
         if (products!=null){
-            Glide.with(context).load("http://192.168.1.100:8000/covers/"+products.getName()+"/"+products.getImage()).into(holder.prod_img);
+            Glide.with(context).load("http://192.168.1.101:8000/covers/"+products.getName()+"/"+products.getImage().trim()).into(holder.prod_img);
         }
         else {
 

@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -62,6 +63,7 @@ holder.Body.setText(datas.getBody());
 if (datas.getCompleted().equals(true)){
     holder.Status.setText("completed");
     holder.Status.setTextColor(mCtx.getResources().getColor(R.color.green));
+    holder.Complete_Image.setVisibility(View.VISIBLE);
 }
 else if (datas.getCompleted().equals(false)){
     holder.Status.setText("not completed");
@@ -94,11 +96,14 @@ call.enqueue(new Callback<Result>() {
         }
         else if (!response.body().getError()){
             Loadingbar.dismiss();
-            Toast.makeText(mCtx, ""+response.body().getMessage(), Toast.LENGTH_SHORT).show();
-            Intent intent1=new Intent(mCtx, MainActivity.class);
-            mCtx.startActivity(intent1);
-            ((Activity)mCtx).finish();
-
+            Toast.makeText(mCtx, ""+datas.getTitle()+" "+response.body().getMessage(), Toast.LENGTH_LONG).show();
+//            Intent intent1=new Intent(mCtx, MainActivity.class);
+//            mCtx.startActivity(intent1);
+//            ((Activity)mCtx).finish();
+            int actualPosition = holder.getAdapterPosition();
+            items.remove(actualPosition);
+            notifyItemRemoved(actualPosition);
+            notifyItemRangeChanged(actualPosition, items.size());
         }
     }
 
@@ -136,6 +141,7 @@ holder.Update_btn.setOnClickListener(new View.OnClickListener() {
     public class ViewHolder extends RecyclerView.ViewHolder {
 private TextView Title,Body,Status;
 private Button Delete_Btn,Update_btn;
+private ImageView Complete_Image;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 Title=itemView.findViewById(R.id.title);
@@ -143,6 +149,7 @@ Body=itemView.findViewById(R.id.body);
 Status=itemView.findViewById(R.id.status);
 Delete_Btn=itemView.findViewById(R.id.delete_btn);
 Update_btn=itemView.findViewById(R.id.update_btn);
+Complete_Image=itemView.findViewById(R.id.complete_img);
 
         }
     }

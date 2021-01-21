@@ -17,14 +17,17 @@ public class Result {
     private List<SearchItems>searchItems;
     @SerializedName("products")
     private List<Products>products;
+    @SerializedName("growth")
+    private List<Growth>growths;
 
-    public Result(Boolean error, String message, List<Datas> datas, Details details, List<SearchItems> searchItems, List<Products> products) {
+    public Result(Boolean error, String message, List<Datas> datas, Details details, List<SearchItems> searchItems, List<Products> products, List<Growth> growths) {
         this.error = error;
         this.message = message;
         this.datas = datas;
         this.details = details;
         this.searchItems = searchItems;
         this.products = products;
+        this.growths = growths;
     }
 
     public Boolean getError() {
@@ -49,5 +52,9 @@ public class Result {
 
     public List<Products> getProducts() {
         return products;
+    }
+
+    public List<Growth> getGrowths() {
+        return growths;
     }
 }

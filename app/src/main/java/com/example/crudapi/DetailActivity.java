@@ -6,6 +6,8 @@ import android.app.ProgressDialog;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +23,7 @@ private String id;
 private TextView Title_txt,Body_txt,Status_txt;
 ApiInterface apiInterface;
 private ProgressDialog Loadingbar;
+private ImageView done_img;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +32,7 @@ private ProgressDialog Loadingbar;
         Title_txt=(TextView)findViewById(R.id.item_title);
         Body_txt=(TextView)findViewById(R.id.item_body);
         Status_txt=(TextView)findViewById(R.id.item_status);
+        done_img=(ImageView)findViewById(R.id.complete_image);
         Loadingbar=new ProgressDialog(this);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.white, this.getTheme()));
@@ -71,6 +75,8 @@ private ProgressDialog Loadingbar;
                     else if (status.equals(true)){
                         Status_txt.setText("completed");
                         Status_txt.setTextColor(Color.parseColor("#4CAF50"));
+                        done_img.setVisibility(View.VISIBLE);
+
                     }
 
                 }
